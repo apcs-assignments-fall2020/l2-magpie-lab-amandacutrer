@@ -32,25 +32,53 @@ public class Magpie
     {
         String response = "";
         if (statement.trim().equals("")){
+
             response = "Say something please";
         }
-        else if (statement.indexOf("no") >= 0)
+        else if (findWord(statement, "no") >= 0)
         {
             response = "Why so negative?";
         }
-        else if (statement.indexOf("mother") >= 0
-                || statement.indexOf("father") >= 0
-                || statement.indexOf("sister") >= 0
-                || statement.indexOf("brother") >= 0)
+        else if (findWord(statement, "hi") >= 0
+        || findWord(statement, "hello") >= 0)
+        {
+            response = "How are you?";
+        }
+        else if (findWord(statement, "mother") >= 0
+                || findWord(statement, "father") >= 0
+                || findWord(statement, "sister") >= 0
+                || findWord(statement, "brother") >= 0)
         {
             response = "Tell me more about your family.";
         }
-        else if (statement.indexOf("cat") >= 0
-                || statement.indexOf("dog") >= 0)
+        else if (findWord(statement, "travel") >= 0){
+
+            response = "I love traveling!";
+        }
+        else if (findWord(statement, "soccer") >= 0
+                || findWord(statement, "basketball") >= 0
+                || findWord(statement, "football") >= 0
+                || findWord(statement, "hockey") >= 0
+                || findWord(statement, "baseball") >= 0
+                || findWord(statement, "lacrosse") >= 0
+                || findWord(statement, "golf") >= 0)
+        {
+            response = "Tell me more about that sport.";
+        }
+        else if (findWord(statement, "ice cream") >= 0
+                || findWord(statement, "brownie") >= 0
+                || findWord(statement, "cookie") >= 0
+                || findWord(statement, "cake") >= 0
+                || findWord(statement, "pie") >= 0)
+        {
+            response = "Dessert is the best.";
+        }
+        else if (findWord(statement, "cat") >= 0
+                || findWord(statement, "dog") >= 0)
         {
             response = "Tell me more about your pets.";
         }
-        else if (statement.indexOf("Nathan") >= 0)
+        else if (findWord(statement, "Nathan") >= 0)
         {
             response = "He sounds like a good teacher.";
         }
@@ -86,7 +114,20 @@ public class Magpie
         }
         else if (whichResponse == 3)
         {
+            
             response = "You don't say.";
+        }
+        else if (whichResponse == 4)
+        {
+            response = "Wow. How does that work?";
+        }
+        else if (whichResponse == 5)
+        {
+            response = "Really?";
+        }
+        else if (whichResponse == 6)
+        {
+            response = "I didn't know that";
         }
     
         return response;
@@ -102,7 +143,10 @@ public class Magpie
     // The method returns the index of the first character in word
     // if it is found, and returns -1 otherwise. 
     public int findWord(String str, String word) {
-        return -1;
+        String stri = " " + str.toLowerCase() + " ";
+        String words = " " + word.toLowerCase() + " ";
+        
+        return stri.indexOf(words);
     }
 
     
