@@ -160,8 +160,9 @@ public class Magpie
      */
     public String transformIWantStatement(String statement)
     {
-        //your code here
-        return "";
+        int want = statement.indexOf("I want");
+        return ("Would you really be happy if you had" + statement.substring((want + 6), statement.length()) + "?");
+
     }
 
     /**
@@ -172,7 +173,6 @@ public class Magpie
      */
     public String transformIYouStatement(String statement)
     {
-        //your code here
         return "";
     }
 
@@ -184,8 +184,8 @@ public class Magpie
      */
     public String transformIWantToStatement(String statement)
     {
-        // your code here
-        return "";
+        int want = statement.indexOf("I want to");
+        return ("What would it mean" + statement.substring((want + 6), statement.length()) + "?");
     }
 
 
