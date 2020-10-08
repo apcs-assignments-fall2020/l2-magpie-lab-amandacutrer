@@ -173,7 +173,9 @@ public class Magpie
      */
     public String transformIYouStatement(String statement)
     {
-        return "";
+        int i = findWord(statement, "I");
+        int you = findWord(statement, "you");
+        return ("Why do you" + statement.substring(i + 1, you) + "me?");
     }
 
     /**
@@ -199,7 +201,8 @@ public class Magpie
      */
     public String transformYouMeStatement(String statement)
     {
-        // your code here
-        return "";
+        int you = findWord(statement, "you");
+        int me = findWord(statement, "me");
+        return ("What makes you think that I" + statement.substring(you + 3, me) + "you?");
     }
 }
