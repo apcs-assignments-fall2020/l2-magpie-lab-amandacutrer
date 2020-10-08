@@ -5,7 +5,7 @@
  *       Uses indexOf to find strings
  * </li><li>
  *          Handles responding to simple words and phrases 
- * </li></ul>
+ * </li></ul
  * This version uses a nested if to handle default responses.
  * @author Laurie White
  * @version April 2012
@@ -81,6 +81,22 @@ public class Magpie
         else if (findWord(statement, "Nathan") >= 0)
         {
             response = "He sounds like a good teacher.";
+        }
+        else if (findWord(statement, "I want to") >= 0){
+            response = transformIWantToStatement(statement);
+        }
+        else if (findWord(statement, "I want") >= 0){
+            response = transformIWantStatement(statement);
+        }
+        else if (findWord(statement, "I") >= 0
+                && findWord(statement, "you") >= 0
+                && findWord(statement, "I") < findWord(statement, "you")){
+            response = transformIYouStatement(statement);
+        }
+        else if (findWord(statement, "you") >= 0
+                && findWord(statement, "me") >= 0
+                && findWord(statement, "you") < findWord(statement, "me")){
+            response = transformYouMeStatement(statement);
         }
         else
         {
@@ -189,7 +205,6 @@ public class Magpie
         int want = statement.indexOf("I want to");
         return ("What would it mean" + statement.substring((want + 6), statement.length()) + "?");
     }
-
 
 
 
