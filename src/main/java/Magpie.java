@@ -1,5 +1,6 @@
 /**
- * A program to carry on conversations with a human user.
+ * I am adding a comment so that hopefully it lets me committ again
+ * A program to carry on conversations with a human user
  * This is the initial version that:  
  * <ul><li>
  *       Uses indexOf to find strings
